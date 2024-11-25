@@ -227,7 +227,7 @@ class MultipartRequest(Request):
                                 400,
                                 f"Malformed command '{0}': 'path' field must be a list of strings",
                             )
-                    if endpoint in ('/configure'):
+                    if endpoint in ('/configure',):
                         if not c['path']:
                             self.form_err = (
                                 400,
@@ -238,7 +238,7 @@ class MultipartRequest(Request):
                                 400,
                                 f"Malformed command '{c}': 'value' field must be a string",
                             )
-                    if endpoint in ('/configure-section'):
+                    if endpoint in ('/configure-section',):
                         if 'section' not in c and 'config' not in c:
                             self.form_err = (
                                 400,
